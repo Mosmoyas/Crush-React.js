@@ -3,10 +3,10 @@ import styles from "../UserCard/userCard.module.css"
 
 const UserCard = ({ id, name, ...info }) => {
     //...info is a spread as a group of unkown keys
-    console.log(info)
+    // console.log(info)
     const { userCard, delBtn } = styles;
-    const deleteHandler = (id) => {
-        info.deleteAction(id)
+    const deleteBtn = (id) => {
+        info.deleteHandler(id)
         // console.log(id)
     }
     return (
@@ -20,7 +20,7 @@ const UserCard = ({ id, name, ...info }) => {
                     <li><span>Gender: </span> {info.gender}</li>
 
                 </ul>
-                <div className={delBtn} onClick={() => deleteHandler(id)}>x</div>
+                <div className={delBtn} onClick={() => deleteBtn(id)}>x</div>
             </div>
 
         </>);
